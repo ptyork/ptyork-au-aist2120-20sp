@@ -1,0 +1,16 @@
+beats = [
+  'Lennon,John,1940,1980',
+  'McCartney,Paul,1942,',
+  'Harrison,George,1943,2001',
+  'Starkey,Richard,1940,',
+]
+
+# GOAL TO PRINT THIS (25 CHARS WIDE)
+# 1234567890123456789012345
+
+# Name:         John Lennon
+# Age:        40 (dec.1980)
+
+# Name:      Paul McCartney
+# Age:                   78
+
