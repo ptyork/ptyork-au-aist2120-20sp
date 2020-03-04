@@ -62,6 +62,88 @@ REGULAR EXPRESSION SYNTAX "RULES"
 # pwnd_patt = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
 # pwnd_patt = re.compile(r'\d\d\d[- .]\d\d\d[- .]\d\d\d\d')
 # pwnd_patt = re.compile(r'\d{3}[- .]\d{3}[- .]\d{4}')
-pwnd_patt = re.compile(r'\d{3}[- .]?\d{3}[- .]?\d{4}')
+pwnd_patt = re.compile(r'\(?\d{3}\)?[- .]?\d{3}[- .]?\d{4}')
 print(pwnd_patt.findall(phones))
+
+def is_phone(num):
+    # pwnd_patt = re.compile(r'\(?\d{3}\)?[- .]?\d{3}[- .]?\d{4}')
+    # pwnd_patt = re.compile(r'^\(?\d{3}\)?[- .]?\d{3}[- .]?\d{4}$')
+    # pwnd_patt = re.compile(r'''
+    #         ^       # Beginning Anchor
+    #         \(?     # Optional Opening Paren
+    #         (\d{3}) # Area Code (3 digits)
+    #         \)?     # Optional Closing Paren
+    #         [- .]?  # Optional ., - or space
+    #         (\d{3}) # Exchange (3 digits)
+    #         [- .]?  # Optional ., - or space
+    #         (\d{4}) # Number (4 digits)
+    #         $       # End of String Anchor
+    #     ''', re.VERBOSE)
+    pwnd_patt = re.compile(r'''
+            ^       # Beginning Anchor
+            \(?     # Optional Opening Paren
+            (706|762|803) # Area Code (3 digits)
+            \)?     # Optional Closing Paren
+            [- .]?  # Optional ., - or space
+            (\d{3}) # Exchange (3 digits)
+            [- .]?  # Optional ., - or space
+            ([0-9]{4}|[A-Z]{4}) # Number (4 digits)
+            $       # End of String Anchor
+        ''', re.VERBOSE)
+    # if pwnd_patt.match(num) is not None:
+    #     return True
+    # else:
+    #     return False
+    return pwnd_patt.match(num) is not None
+
+def get_phone_parts(num):  # return a tuple containing the three parts
+    # pwnd_patt = re.compile(r'(\d{3})[- .]?(\d{3})[- .]?(\d{4})')
+    pwnd_patt = re.compile(r'''
+        (\d{3})     # Area Code Group
+        [- .]?      # Optionally a ., - or space
+        (\d{3})     # Exchange Group
+        [- .]?      # Optionally a ., - or space
+        (\d{4})     # Number Group
+        \s*         # Ignore 0 or more spaces
+        (.*)        # Capture whatever is left
+    ''', re.VERBOSE)
+    mat = pwnd_patt.match(num)
+    if mat is not None:
+        # return ('706','555','1212')
+        # num = '7065551212'
+        # return (num[:3], num[3:6], num[6:])
+        return mat.groups()
+    else:
+        return None
+    
+parts = get_phone_parts('706-555-1212')
+print(f'Area Code: {parts[0]}')
+print(f'Exchange:  {parts[1]}')
+print(f'Number:    {parts[2]}')
+
+parts = get_phone_parts('706-555-Booger')
+if parts:   # Truthy or Falsey
+    print(f'Area Code: {parts[0]}')
+    print(f'Exchange:  {parts[1]}')
+    print(f'Number:    {parts[2]}')
+
+parts = get_phone_parts('706-555-1818 x123')
+if parts:   # Truthy or Falsey
+    print(f'Area Code: {parts[0]}')
+    print(f'Exchange:  {parts[1]}')
+    print(f'Number:    {parts[2]}')
+    print(f'Extension: {parts[3]}')
+
+parts = get_phone_parts('762-867-5309 Jenny Don\'t Lose My Number')
+if parts:   # Truthy or Falsey
+    print(f'Area Code: {parts[0]}')
+    print(f'Exchange:  {parts[1]}')
+    print(f'Number:    {parts[2]}')
+    print(f'Extension: {parts[3]}')
+
+
+print(is_phone('7065551212'))
+print(is_phone('706555181818'))
+print(is_phone('762-111-2222'))
+print(is_phone('770-123-4567'))
 

@@ -1,0 +1,41 @@
+ Volume in drive Z is FacStaff Data
+ Volume Serial Number is D0F7-3E2D
+
+ Directory of z:\AIST2120
+
+03/03/2020  03:41 PM    <DIR>          .
+03/03/2020  03:41 PM    <DIR>          ..
+01/17/2020  11:49 AM             2,050 .gitignore
+02/11/2020  06:31 PM             2,396 0204_lecture_notes.py
+03/03/2020  11:06 AM    <DIR>          A
+03/03/2020  03:41 PM    <DIR>          B
+03/03/2020  03:44 PM                 0 dirs.txt
+02/20/2020  04:17 PM            10,521 EXAM_1_STUDY_GUIDE.ipynb
+01/17/2020  11:45 AM               187 README.md
+               5 File(s)         15,154 bytes
+               4 Dir(s)     475,725,824 bytes free
+ Volume in drive Z is FacStaff Data
+ Volume Serial Number is D0F7-3E2D
+
+ Directory of z:\AIST2120\b
+
+03/03/2020  03:41 PM    <DIR>          .
+03/03/2020  03:41 PM    <DIR>          ..
+01/17/2020  11:45 AM               357 11420.py
+01/21/2020  02:34 PM             1,557 11620_control.py
+01/21/2020  03:43 PM               318 12120_game.py
+01/21/2020  03:52 PM             1,866 122120_menu.py
+01/23/2020  03:30 PM               893 12320_funcs.py
+01/28/2020  03:35 PM               677 12820_except.py
+01/28/2020  03:43 PM               248 12820_funkyexcept.py
+01/28/2020  03:11 PM               931 12820_scope.py
+01/30/2020  03:53 PM             1,123 13020_lists.py
+01/17/2020  11:45 AM                65 1920.py
+02/11/2020  03:56 PM             3,527 21120_strings.py
+02/18/2020  03:49 PM             1,308 21820_dictionaries.py
+02/20/2020  03:54 PM             3,453 22020_dddd.py
+02/25/2020  02:53 PM             1,106 22520_findstuff.py
+02/27/2020  03:29 PM             4,685 22520_regex.py
+02/11/2020  09:35 AM               320 beats.txt
+              16 File(s)         22,434 bytes
+               2 Dir(s)     475,725,824 bytes free

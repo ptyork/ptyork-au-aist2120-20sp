@@ -1,0 +1,125 @@
+File Nameing and Access
+
+file_name.extension    "generic name"
+"file name with space.ext"   if the name has a space
+lettters, numbers and underscores (and dots) are recommended file name characters
+hello.world.i.am.alive.txt    okay but wierd
+hello.doc.tmp
+folders are the same but USUALLY don't have an extension
+
+WHAT IS AN EXTENSION???
+txt ==> Text File
+py ===> Python File
+exe ==> Executable File
+bat ==> Batch File
+cmd ==> Batch File
+ps1 ==> PowerShell File
+docx ==> Word
+xml ==> Extensible Markup Language
+zip ==> Zip file (compressed archive)
+extetera, etcetera.
+
+File Management
+================================
+Windows     Linux       Description
+cd          cd          Change Directory
+mkdir, md   mkidr       Make a Directory
+rmdir, rd   rm          Remove a directory
+rd /s       rm -r       Recursively remove a directory (DANGER WILLIE ROB)
+del         rm          Remove a file
+type        cat         List the contents of a text file
+more        more, less  Page through a text file
+cd          pwd         Present Working Directory
+copy        cp          Copy a file
+move        mv          Move a file
+
+
+File Organization
+
+Windows (case INsensitive)
+
+z:\
+    Texts\
+        bob.txt
+        jerome.txt
+    Docs\
+        Kids\
+            Bobby.txt
+            Boopy.txt
+        cindy.txt
+        cathy.txt
+
+If in the Z:\ (root) folder:
+    bob.txt     ===>    type Texts\bob.txt
+    Boopy.txt   ===>    type Docs\Kids\Boopy.txt
+
+If in Z:\Texts folder:
+    jerome.txt  ===>    type jerome.txt
+    jerome.txt  ===>    type .\jerome.txt  (alternative)
+    Bobby.txt   ===>    type z:\Docs\Kids\Bobby.txt  (absolute path)
+    Bobby.txt   ===>    type \Docs\Kids\Bobby.txt  (absolute path on current drive)
+    Bobby.txt   ===>    type ..\Docs\Kids\Bobby.txt  (relative path --> start navigation with parent)
+
+If in Z:\Docs\Kids folder:
+    cindy.txt   ==>     type z:\Docs\cindy.txt  (absolute)
+    cindy.txt   ==>     type \Docs\cindy.txt  (absolute relative to current drive)
+    cindy.txt   ==>     type ..\cindy.txt  (relative)
+    
+
+Linux / Mac / *nix (case SENSITIVE)
+
+/ (no drive but still the "root" of the file system)
+    Texts/
+        bob.txt
+        jerome.txt
+    Docs/
+        Kids/
+            Bobby.txt
+            Boopy.txt
+        cindy.txt
+        cathy.txt
+
+If in the / (root) folder:
+    bob.txt     ===>    cat Texts/bob.txt
+    Boopy.txt   ===>    cat Docs\Kids\Boopy.txt
+
+If in /Texts folder:
+    jerome.txt  ===>    cat jerome.txt
+    jerome.txt  ===>    cat ./jerome.txt  (alternative)
+    Bobby.txt   ===>    cat /Docs/Kids/Bobby.txt  (absolute path)
+    Bobby.txt   ===>    cat ../Docs/Kids/Bobby.txt  (relative path --> start navigation with parent)
+
+If in /Docs/Kids folder:
+    cindy.txt   ==>     cat /Docs/cindy.txt  (absolute)
+    cindy.txt   ==>     cat ../cindy.txt  (relative)
+    
+
+.  ==> Current Directory
+.. ==> Parent Directory
+    
+    
+Current (Present) Working Directory ==> the location from which a command is executed
+CWD \ PWD
+
+Command Switches \ Options (Common Convention)
+----------------------------------------------
+command /something /somethingelse    is how you typically do it in Windows
+command -something -somethingelse    is how you typically do it in Linux / Mac
+
+
+Standard I/O
+============
+Terminal Input and Output
+- Stream Based (NOT random access)
+- Default to Keyboard Input and Terminal Output
+- CAN BE REDIRECTED
+
+PIPING
+======
+Output from one Command as Input for Another Command
+e.g. "dir | more" can page a long directory
+
+OUTPUT REDIRECTION
+==================
+COMMAND > FILENAME      Takes output and saves (overwrites) file
+COMMAND >> FILENAME     Takes output and appends to file
