@@ -1,0 +1,7 @@
+Name|Phone|Address|City|State|Zip|Email
+Chandler Bing|999-888-7777|123 Bing Way|New York|NY|66666|bingerman@yahoo.com
+Rachael Greene||Mom's House|New York|NY|66665|rachael@hotmail.com
+Ross Geller|999-888-7777|123 Bing Way|New York|NY|66666|bingerman@yahoo.com
+Joey Tribiani|999-888-7777|123 Bing Way|New York|NY|66666|bingerman@yahoo.com
+Phoebe Buffet|999-888-7777|123 Bing Way|New York|NY|66666|bingerman@yahoo.com
+Monica Geller|999-888-7777|123 Bing Way|New York|NY|66666|bingerman@yahoo.com
